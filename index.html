@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="controller.js"></script>
         
         <title>About Me</title>
     </head>
@@ -36,6 +38,25 @@
         </div>
         <div>
             <img src="bee_yourself.png" alt="A happy bee looking up">
+        </div>
+        <div class="flex-list-container">
+            <div class="add-item-box">
+                <h3 id="input-header">Enter a item you want to add to the list</h3>
+                <div id="input-item-section">
+                    <form id="input-item-form">
+                        <label for="additem">Enter Item</label>
+                        <input type="text" name="additem" id="item-to-add">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+            <div class="show-item-box">
+                <h3 id="display-item-header">Da List</h3>
+                <div id="da-list-section">
+                    <ul id="da-list-display">
+                    </ul>
+                </div>
+            </div>
         </div>
     </body>
 </html>

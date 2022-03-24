@@ -4,6 +4,35 @@
     flex-direction: row-reverse;
 }
 
+#input-header, #display-item-header {
+    text-align: center;
+}
+
+#input-item-section {
+    display:flex;
+    justify-content: center;
+}
+
+.flex-list-container {
+    display: flex;
+}
+
+.add-item-box {
+    flex: 1;
+    height: 15em;
+}
+
+.show-item-box {
+    flex: 1;
+    height: 15em;
+    overflow-y: scroll;
+}
+
 li {
     padding: 1em;
+}
+
+img {
+    width: 300px;
+    height: 300px;
 }
