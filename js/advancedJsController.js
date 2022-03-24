@@ -22,9 +22,10 @@ function change_wait_text(text) {
 }
 
 function api_call() {
-    getPokemon("ditto")
+    getPokemon("nidoking")
         .then(response => {
-            alert(JSON.stringify(response));
+            document.querySelector('#pokemon-name-header').innerText = response.species.name;
+            document.querySelector('#health-stat').innerText = response.stats[0].base_stat + response.stats[0].stat.name;
         })
         .catch(error => {
             alert(error);
