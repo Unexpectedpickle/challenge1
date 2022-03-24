@@ -1,5 +1,6 @@
 window.onload = function() {
-    document.getElementById('submit-form').addEventListener("submit", clicked);
+    document.getElementById('submit-btn').addEventListener("click", clicked);
+    document.querySelector('#fetch-api-btn').addEventListener("click", api_call)
 }
 
 const waitText = "Waiting";
@@ -18,4 +19,24 @@ function clicked(e) {
 
 function change_wait_text(text) {
     document.getElementById('waiting-text').innerText = text;
+}
+
+function api_call() {
+    getPokemon("ditto")
+        .then(response => {
+            alert(JSON.stringify(response));
+        })
+        .catch(error => {
+            alert(error);
+        })
+}
+
+async function getPokemon(name) {
+    const request = new Request('https://pokeapi.co/api/v2/pokemon/' + name);
+    const response = await fetch(request);
+    if (response.ok) {
+        return response.json();
+    } else {
+        return "Something went wrong";
+    }
 }
